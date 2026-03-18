@@ -10,7 +10,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN git config --global url."https://github.com/".insteadOf ssh://git@github.com/ && \
-    git config --global url."https://github.com/".insteadOf git@github.com:
+    git config --global --add url."https://github.com/".insteadOf git@github.com:
 
 RUN npm install -g openclaw@latest
 
