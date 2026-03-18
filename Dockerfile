@@ -5,6 +5,10 @@ ENV NODE_ENV=production \
     OPENCLAW_STATE_DIR=/tmp/.openclaw \
     OPENCLAW_WORKSPACE_DIR=/tmp/workspace
 
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN npm install -g openclaw@latest
 
 WORKDIR /app
