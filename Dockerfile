@@ -5,7 +5,9 @@ ENV NODE_ENV=production \
     OPENCLAW_STATE_DIR=/tmp/.openclaw \
     OPENCLAW_WORKSPACE_DIR=/tmp/workspace \
     GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt \
-    SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+    SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt \
+    OPENCLAW_SKIP_CANVAS_HOST=1 \
+    NODE_OPTIONS=--max-old-space-size=384
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ca-certificates git && \
