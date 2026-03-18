@@ -3,7 +3,9 @@ FROM node:22-bookworm-slim
 ENV NODE_ENV=production \
     PORT=8080 \
     OPENCLAW_STATE_DIR=/tmp/.openclaw \
-    OPENCLAW_WORKSPACE_DIR=/tmp/workspace
+    OPENCLAW_WORKSPACE_DIR=/tmp/workspace \
+    GIT_SSL_CAINFO=/etc/ssl/certs/ca-certificates.crt \
+    SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends ca-certificates git && \
